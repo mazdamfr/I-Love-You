@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love, Gwen ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .love-message {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: float 4s ease-in-out infinite;
+            max-width: 600px;
+            margin: 20px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .heart-container {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .heart {
+            color: #ff4757;
+            font-size: 3rem;
+            animation: heartbeat 1.5s infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.5));
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .message-text {
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: fadeInUp 2.5s ease-out;
+        }
+        
+        .flower-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .flower {
+            position: absolute;
+            font-size: 2rem;
+            animation: fall 8s linear infinite;
+            opacity: 0.8;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .love-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            animation: buttonGlow 2s infinite alternate;
+        }
+        
+        @keyframes buttonGlow {
+            from { box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4); }
+            to { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
+        }
+        
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+        }
+        
+        .love-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .sparkles {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: sparkle 1s ease-out forwards;
+        }
+        
+        @keyframes sparkle {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .love-message {
+                padding: 40px 20px;
+                margin: 10px;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .message-text {
+                font-size: 1rem;
+            }
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            animation: floatHeart 10s linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="flower-container" id="flowers"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <div class="love-message">
+            <h1 class="main-title">I Love You</h1>
+            <h2 class="subtitle">Gwen Evanthe Aleshia Alfons</h2>
+            
+            <div class="heart-container">
+                <div class="heart">❤️</div>
+            </div>
+            
+            <p class="message-text">
+                Kamu adalah cahaya dalam hidupku, bintang terindah di langit malamku. 
+                Setiap detik bersamamu adalah keajaiban yang tak tergantikan. 
+                Cintaku untukmu akan terus berbunga seperti taman yang tak pernah layu.
+            </p>
+            
+            <button class="love-button" onclick="showLove()">💕 Klik untuk Kejutan! 💕</button>
+        </div>
+    </div>
+    
+    <div class="sparkles" id="sparkles"></div>
+    
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Create falling flowers
+        function createFlower() {
+            const flowersContainer = document.getElementById('flowers');
+            const flowers = ['🌸', '🌺', '🌻', '🌷', '🌹', '🌼', '💐'];
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.style.left = Math.random() * 100 + '%';
+            flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            flowersContainer.appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, 8000);
+        }
+        
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heartsContainer = document.getElementById('floatingHearts');
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.textContent = '💖';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        
+        // Love button click effect
+        function showLove() {
+            const messages = [
+                "Gwen, kamu adalah segalanya! 💕",
+                "Setiap hari bersamamu adalah hadiah! 🎁",
+                "Cinta kita akan abadi selamanya! 💖",
+                "Kamu membuat hidupku sempurna! ✨",
+                "Terima kasih sudah ada dalam hidupku! 🌟"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Create sparkle effect
+            createSparkles(event);
+            
+            // Show message
+            setTimeout(() => {
+                alert(randomMessage);
+            }, 500);
+            
+            // Create extra flowers
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => createFlower(), i * 200);
+            }
+        }
+        
+        // Create sparkle effect
+        function createSparkles(event) {
+            const sparklesContainer = document.getElementById('sparkles');
+            const rect = event.target.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = x + (Math.random() - 0.5) * 100 + 'px';
+                sparkle.style.top = y + (Math.random() - 0.5) * 100 + 'px';
+                sparklesContainer.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            
+            // Start flower animation
+            setInterval(createFlower, 1500);
+            
+            // Start floating hearts
+            setInterval(createFloatingHeart, 3000);
+            
+            // Add some initial effects
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(createFlower, i * 300);
+                }
+            }, 1000);
+        });
+        
+        // Add mouse trail effect
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.9) {
+                const trail = document.createElement('div');
+                trail.innerHTML = '✨';
+                trail.style.position = 'fixed';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.pointerEvents = 'none';
+                trail.style.color = 'rgba(255, 255, 255, 0.8)';
+                trail.style.fontSize = '1rem';
+                trail.style.zIndex = '1000';
+                trail.style.animation = 'sparkle 1s ease-out forwards';
+                document.body.appendChild(trail);
+                
+                setTimeout(() => {
+                    trail.remove();
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
